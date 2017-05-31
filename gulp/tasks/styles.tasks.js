@@ -5,6 +5,8 @@ const fs = require('fs-extra');
 const conf = require('../../conf/gulp.conf');
 const plumber = require('gulp-plumber');
 
+var inject = require('gulp-inject');
+
 gulp.task('styles', gulp.series(makeCss, injectCss));
 
 function makeCss(cb) {
@@ -28,8 +30,11 @@ function injectCss(cb) {
         fs.copySync(srcIndex, dstIndex);
     }
 
-    // TODO use gulp-inject to wire up css in index.html
+    var cssSources = gulp.src('**/*.css', {read: false});
+
+    //using gulp-inject to wire up css in index.html
     return gulp.src(dstIndex, {base: conf.path.tmp()})
+        .pipe(inject(cssSources))
         .pipe(gulp.dest(conf.paths.tmp))
         .on('end', cb);
 }
