@@ -13,6 +13,18 @@
             .state('home', {
                 url: '/dashboard',
                 component: 'dashboardComponent'
+            })
+            .state('add', {
+                url: '/add',
+                component: 'addComponent'
+            })
+            .state('edit', {
+                url: '/edit',
+                component: 'editComponent'
+            })
+            .state('pagination', {
+                url: '/pagination',
+                component: 'pageComponent'
             });
     }
 })();

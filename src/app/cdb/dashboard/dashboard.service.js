@@ -2,12 +2,13 @@
     'use strict';
 
     angular.module('app.dashboard.service', [])
-        .factory('computers', computers);
+        .factory('DashFactory', computers);
 
+    /* @ngInject */
     function computers($http) {
         return {
-            list: (callback) => {
-                $http.get(env.api.URL + '/computers').then(callback);
+            getComputers: (callback) => {
+                return $http.get(env.api.URL + '/computers').then(callback);
             }
         };
     }

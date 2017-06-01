@@ -12,22 +12,22 @@
     };
 
     angular.module('app.cdb')
-        .component('dashboardComponent', {
-            templateUrl: 'src/app/cdb/dashboard/dashboard.html',
-            controller: DashboardController,
-            controllerAs: 'dashCtrl'
+        .component('addComponent', {
+            templateUrl: 'src/app/cdb/add/addComputer.html',
+            controller: AddController,
+            controllerAs: 'addCtrl'
         });
     /* @ngInject */
-    function DashboardController(DashFactory) {
+    function AddController(AddFactory) {
         // jshint validthis: true
         const vm = this;
-        vm.computersList = {};
-        vm.$onInit = $onInit;
+        vm.computer = {};
+        vm.submit = submit;
         vm.helpers = MyDates.helpers;
 
-        function $onInit() {
-            DashFactory.getComputers().then(function(response) {
-                vm.computersList = response.data;
+        function submit() {
+            AddFactory.addComputer(vm).then(function(response) {
+                //vm.computersList = response.data;
             });
         }
     }

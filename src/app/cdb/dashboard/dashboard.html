@@ -1,14 +1,10 @@
 <body>
-  <header class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="dashboard.html"> Application - Computer Database </a>
-    </div>
-  </header>
+  <div ng-include="'commons/header.html'"></div>
 
   <section id="main">
     <div class="container">
       <h1 id="homeTitle">
-               121 Computers found
+               121 Computers found {{ dashCtrl.greeting }}
            </h1>
       <div id="actions" class="form-horizontal">
         <div class="pull-left">
@@ -19,7 +15,7 @@
           </form>
         </div>
         <div class="pull-right">
-          <a class="btn btn-success" id="addComputer" href="addComputer.html">Add Computer</a>
+          <a class="btn btn-success" id="addComputer" href="/add">Add Computer</a>
           <a class="btn btn-default" id="editComputer" href="#" onclick="$.fn.toggleEditMode();">Edit</a>
         </div>
       </div>
@@ -63,16 +59,16 @@
         </thead>
         <!-- Browse attribute computers -->
         <tbody id="results">
-          <tr ng-repeat="computer in computersList">
+          <tr ng-repeat="computer in dashCtrl.computersList">
             <td class="editMode">
-              <input type="checkbox" name="cb" class="cb" value="0">
+              <input type="checkbox" name="cb" class="cb" value="{{computer.id}}">
             </td>
             <td>
-              <a href="editComputer.html" onclick="">MacBook Pro</a>
+              <a href="editComputer.html" onclick="">{{computer.name}}</a>
             </td>
-            <td>2006-01-10</td>
-            <td></td>
-            <td>Apple Inc.</td>
+            <td>{{dashCtrl.helpers.toPattern(computer.introduced)}}</td>
+            <td>{{dashCtrl.helpers.toPattern(computer.discontinued)}}</td>
+            <td>{{computer.company.name}}</td>
 
           </tr>
         </tbody>
