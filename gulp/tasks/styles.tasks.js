@@ -30,7 +30,7 @@ function injectCss(cb) {
         fs.copySync(srcIndex, dstIndex);
     }
 
-    var cssSources = gulp.src('**/*.css', {read: false});
+    var cssSources = gulp.src('src/styles/*.css', {read: false});
 
     //using gulp-inject to wire up css in index.html
     return gulp.src(dstIndex, {base: conf.path.tmp()})
