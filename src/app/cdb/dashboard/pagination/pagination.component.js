@@ -22,7 +22,7 @@
           var pgStart = Math.max(currentPage - NB_PAGINATION / 2, 1);
           var pgEnd = pgStart + NB_PAGINATION;
           if (pgEnd > totalPages + 1) {
-              long diff = pgEnd - totalPages;
+              var diff = pgEnd - totalPages;
               pgStart -= diff - 1;
               if (pgStart < 1) {
                   pgStart = 1;
@@ -41,44 +41,58 @@
         .component('pageComponent', {
             templateUrl: 'src/app/cdb/dashboard/pagination/pagination.html',
             controller: PaginationController,
-            controllerAs: 'pageCtrl'
+            controllerAs: 'pageCtrl',
+            bindings: {
+                totalNbComputer: '=',
+                events: '<'
+            }
         });
     /* @ngInject */
-    function PaginationController() {
+    function PaginationController($log) {
         // jshint validthis: true
         const vm = this;
-        //Request from view
-        vm.currentPage = 1;
-        vm.pageSize = 10;
-        //Data from API
-        vm.listComputers = [{"id":1,"name":"MacBook Pro 15.4 inch","introduced":null,"discontinued":null,
-        "company":{"id":1,"name":"Apple Inc."}},{"id":2,"name":"CM-2a","introduced":null,"discontinued":null,"company":{"id":2,"name":"Thinking Machines"}}];
-        vm.totalNbComputer = 510;
-        //Calculated data
-        vm.visiblePages = [];
+        vm.pageSizeChoices = [100, 50, 10];
+        vm.$onInit = $onInit;
 
-        vm.myValues = MyPage.helpers.getPagination(vm.pageSize, vm.currentPage, vm.totalNbComputer);
-        vm.pgStart = vm.myValues[0];
-        vm.pgEnd = vm.myValues[1];
-        vm.totalPagination = vm.myValues[3];
-        vm.isLastPage = vm.currentPage == vm.totalPagination;
+        function $onInit() {
+          //init view's values
+          vm.currentPage = 1;
+          vm.pageSize = 10;
+          //Calculate data
+          vm.myValues = MyPage.helpers.getPagination(vm.pageSize, vm.currentPage, vm.totalNbComputer);
+          vm.pgStart = vm.myValues[0];
+          vm.pgEnd = vm.myValues[1];
+          vm.totalPagination = vm.myValues[2];
+          vm.isLastPage = (vm.currentPage == vm.totalPagination);
+          vm.showPagination();
+        }
 
         vm.numPages = function () {
-          return Math.ceil(vm.listComputers.length / $scope.pageSize);
+          return Math.ceil(vm.totalNbComputer / $scope.pageSize);
         };
 
-        vm.makevisiblePages = function () {
-          console.log("test" + vm.pgStart);
-          for (var i = vm.pgStart; i< vm.pgEnd+1; i++){
+        vm.showPagination = function () {
+          vm.visiblePages = [];
+          for (var i = vm.pgStart; i< vm.pgEnd; i++){
             vm.visiblePages.push(i);
           }
+          vm.isLastPage = (vm.currentPage == vm.totalPagination);
         };
-        vm.makevisiblePages();
-
+        //On click pagination index
         vm.selectPage = function(index) {
+            //Reload pagination
             vm.currentPage = index;
-            vm.pgStart = 1;
-            vm.pgEnd = 5;
+            vm.myValues = MyPage.helpers.getPagination(vm.pageSize, vm.currentPage, vm.totalNbComputer);
+            vm.pgStart = vm.myValues[0];
+            vm.pgEnd = vm.myValues[1];
+            vm.showPagination();
+            //Dashboard callback
+            vm.events.onPageChange(vm.currentPage);
+        };
+        //On click page size choice index
+        vm.selectPageSize = function(size) {
+            vm.pageSize = size;
+            vm.events.onPageSizeChange(vm.pageSize);
         }
     }
 })();

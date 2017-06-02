@@ -7,8 +7,8 @@
     /* @ngInject */
     function computers($http) {
         return {
-            getComputers: (callback) => {
-                return $http.get(env.api.URL + '/computers').then(callback);
+            getComputers: function(page, size) {
+                return $http.get(env.api.URL + '/computers/' + page + "/" + size);
             }
         };
     }

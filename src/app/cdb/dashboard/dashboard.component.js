@@ -24,11 +24,32 @@
         vm.computersList = {};
         vm.$onInit = $onInit;
         vm.helpers = MyDates.helpers;
+        vm.totalNbComputer = 510;
+        vm.page = 1;
+        vm.size = 10;
+        vm.events = {
+          onPageChange = onPageChange,
+          onPageSizeChange = onPageSizeChange
+        };
 
         function $onInit() {
-            DashFactory.getComputers().then(function(response) {
-                vm.computersList = response.data;
-            });
+            getComputers();
+        };
+
+        function getComputers() {
+          DashFactory.getComputers(vm.page, vm.size).then(function(response) {
+              vm.computersList = response.data;
+          });
+        }
+
+        function onPageChange(page) {
+            vm.page = page;
+            getComputers();
+        };
+
+        function onPageSizeChange(size) {
+            vm.size = size;
+            getComputers();
         }
     }
 })();

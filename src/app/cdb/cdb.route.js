@@ -21,10 +21,6 @@
             .state('edit', {
                 url: '/edit',
                 component: 'editComponent'
-            })
-            .state('pagination', {
-                url: '/pagination',
-                component: 'pageComponent'
             });
     }
 })();
