@@ -1,9 +1,9 @@
 (function() {
     'use strict';
 
-    angular.module('app.cdb')
+    angular.module('app')
         .component('pageComponent', {
-            templateUrl: 'src/app/cdb/dashboard/pagination/pagination.html',
+            templateUrl: 'src/app/commons/pagination/pagination.html',
             controller: PaginationController,
             controllerAs: 'pageCtrl',
             bindings: {
@@ -51,7 +51,7 @@
           }
           vm.isLastPage = (vm.currentPage == vm.totalPagination);
         };
-        
+
         //DASHBOARD CALLBACKS
         //On click pagination index
         vm.selectPage = function(index) {

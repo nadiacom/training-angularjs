@@ -4,8 +4,7 @@
         'ngAnimate',
         'ui.router',
         'blocks',
-        'app.hello',
-        'app.cdb'
+        'app.cdb.service'
     ]);
 
 })();

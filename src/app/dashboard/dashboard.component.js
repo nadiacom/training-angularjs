@@ -11,14 +11,14 @@
         }
     };
 
-    angular.module('app.cdb')
+    angular.module('app')
         .component('dashboardComponent', {
-            templateUrl: 'src/app/cdb/dashboard/dashboard.html',
+            templateUrl: 'src/app/dashboard/dashboard.html',
             controller: DashboardController,
             controllerAs: 'dashCtrl'
         });
     /* @ngInject */
-    function DashboardController(DashFactory) {
+    function DashboardController(ComputersAPI) {
         // jshint validthis: true
         const vm = this;
         vm.computersList = {};
@@ -37,7 +37,7 @@
         };
 
         function getComputers() {
-          DashFactory.getComputers(vm.page, vm.size).then(function(response) {
+          ComputersAPI.getPage(vm.page, vm.size).then(function(response) {
               vm.computersList = response.data;
           });
         }

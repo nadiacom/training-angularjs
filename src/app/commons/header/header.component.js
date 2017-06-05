@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    angular.module('app.cdb')
+    angular.module('app')
         .component('headerComponent', {
             templateUrl: 'src/app/commons/header/header.html',
             controller: HeaderController,

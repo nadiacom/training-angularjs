@@ -11,9 +11,9 @@
         }
     };
 
-    angular.module('app.cdb')
+    angular.module('app')
         .component('addComponent', {
-            templateUrl: 'src/app/cdb/add/addComputer.html',
+            templateUrl: 'src/app/add/addComputer.html',
             controller: AddController,
             controllerAs: 'addCtrl'
         });
