@@ -10,3 +10,9 @@ SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
 log4j:WARN No appenders could be found for logger (org.infernus.idea.checkstyle.CheckStylePlugin).
 log4j:WARN Please initialize the log4j system properly.
 log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+/tmp/csi-62415def-ae12-4830-adda-3bc912f6ab46/src/main/java/com/ebiz/cdb/api/ComputerRestController.java:103:42: expecting IDENT, found '@'
+/tmp/csi-62415def-ae12-4830-adda-3bc912f6ab46/src/main/java/com/ebiz/cdb/api/ComputerRestController.java:103:65: unexpected token: int
+/tmp/csi-62415def-ae12-4830-adda-3bc912f6ab46/src/main/java/com/ebiz/cdb/api/ComputerRestController.java:103:109: unexpected token: int
+/tmp/csi-aa4d84c2-b094-4487-9075-313611f128e1/src/main/java/com/ebiz/cdb/api/ComputerRestController.java:103:42: expecting IDENT, found '@'
+/tmp/csi-aa4d84c2-b094-4487-9075-313611f128e1/src/main/java/com/ebiz/cdb/api/ComputerRestController.java:103:65: unexpected token: int
+/tmp/csi-aa4d84c2-b094-4487-9075-313611f128e1/src/main/java/com/ebiz/cdb/api/ComputerRestController.java:103:109: unexpected token: int

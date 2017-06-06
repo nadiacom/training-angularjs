@@ -11,9 +11,12 @@
                 return $http.get(env.api.URL + '/computers/').then(callback);
             },
             getPage: (page, size, callback) => {
-                return $http.get(env.api.URL + '/computers/' + page + "/" + size).then(mapPage).then(callback);
+                return $http.get(env.api.URL + '/computers' + '?page=' + page + '&size=' + size).then(mapPage).then(callback);
             },
             get: (id, callback) => {
+                return $http.get(env.api.URL + '/computers/' + id).then(callback);
+            },
+            count: (callback) => {
                 return $http.get(env.api.URL + '/computers/' + id).then(callback);
             }
         };
