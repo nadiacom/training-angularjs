@@ -5,7 +5,7 @@
         .factory('ComputersAPI', ComputersAPI);
 
     /* @ngInject */
-    function ComputersAPI($http) {
+    function ComputersAPI($http, Computer) {
         return {
             getAll: (callback) => {
                 return $http.get(env.api.URL + '/computers/').then(callback);
@@ -17,15 +17,15 @@
                 return $http.get(env.api.URL + '/computers/' + id).then(callback);
             }
         };
-
+        /* @ngInject */
         function mapPage(responseData) {
             var list=[];
-            for(var i= 0; i < responseData.data.list.length; i++)
+            for(var i= 0; i < responseData.data.length; i++)
             {
-                list.push(Computer.map(responseData.data.list[i]));
+                list.push(Computer.map(responseData.data[i]));
             }
-            responseData.data.list = list;
+            responseData.data = list;
             return responseData;
-        }
-    }
+        };
+    };
 })();

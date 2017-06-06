@@ -18,6 +18,7 @@
        * Instance ('this') is not available in static context
        */
        Company.build = function (data) {
+            console.log(data);
             return new Company(
                 data.id,
                 data.name
