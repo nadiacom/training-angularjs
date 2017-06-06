@@ -16,3 +16,23 @@ log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more in
 /tmp/csi-aa4d84c2-b094-4487-9075-313611f128e1/src/main/java/com/ebiz/cdb/api/ComputerRestController.java:103:42: expecting IDENT, found '@'
 /tmp/csi-aa4d84c2-b094-4487-9075-313611f128e1/src/main/java/com/ebiz/cdb/api/ComputerRestController.java:103:65: unexpected token: int
 /tmp/csi-aa4d84c2-b094-4487-9075-313611f128e1/src/main/java/com/ebiz/cdb/api/ComputerRestController.java:103:109: unexpected token: int
+file://a.html [1:2] Error in pseudo class or element. (Invalid token ":". Was expecting one of: <IDENT>, <FUNCTION_LANG>, <FUNCTION>.)
+file://a.html [1:2] Ignoring the whole rule.
+file://a.html [1:2] Error in pseudo class or element. (Invalid token ":". Was expecting one of: <IDENT>, <FUNCTION_LANG>, <FUNCTION>.)
+file://a.html [1:2] Ignoring the whole rule.
+file://a.html [1:2] Error in pseudo class or element. (Invalid token ":". Was expecting one of: <IDENT>, <FUNCTION_LANG>, <FUNCTION>.)
+file://a.html [1:2] Ignoring the whole rule.
+file://a.html [1:2] Error in pseudo class or element. (Invalid token ":". Was expecting one of: <IDENT>, <FUNCTION_LANG>, <FUNCTION>.)
+file://a.html [1:2] Ignoring the whole rule.
+file://a.html [1:2] Error in pseudo class or element. (Invalid token ":". Was expecting one of: <IDENT>, <FUNCTION_LANG>, <FUNCTION>.)
+file://a.html [1:2] Ignoring the whole rule.
+file://a.html [1:2] Error in pseudo class or element. (Invalid token ":". Was expecting one of: <IDENT>, <FUNCTION_LANG>, <FUNCTION>.)
+file://a.html [1:2] Ignoring the whole rule.
+/tmp/csi-748a3428-f069-4d20-b8a7-94a035ecd044/src/main/java/com/ebiz/cdb/api/CompanyRestController.java:39:5: unexpected token: public
+/tmp/csi-748a3428-f069-4d20-b8a7-94a035ecd044/src/main/java/com/ebiz/cdb/api/CompanyRestController.java:39:49: unexpected token: Long
+/tmp/csi-cba62a9a-8f31-4bfc-869e-07569f525ace/src/main/java/com/ebiz/cdb/api/CompanyRestController.java:42:5: expecting SEMI, found '}'
+/tmp/csi-cba62a9a-8f31-4bfc-869e-07569f525ace/src/main/java/com/ebiz/cdb/api/CompanyRestController.java:53:12: unexpected token: List
+/tmp/csi-cba62a9a-8f31-4bfc-869e-07569f525ace/src/main/java/com/ebiz/cdb/api/CompanyRestController.java:53:59: unexpected token: String
+/tmp/csi-cba62a9a-8f31-4bfc-869e-07569f525ace/src/main/java/com/ebiz/cdb/api/CompanyRestController.java:53:94: unexpected token: int
+/tmp/csi-cba62a9a-8f31-4bfc-869e-07569f525ace/src/main/java/com/ebiz/cdb/api/CompanyRestController.java:53:138: unexpected token: int
+/tmp/csi-73655458-84bb-44cf-89e7-19591100c009/src/main/java/com/ebiz/cdb/api/CompanyRestController.java:39:12: unexpected token: List

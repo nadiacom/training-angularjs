@@ -6,18 +6,24 @@ const conf = require('../../conf/gulp.conf');
 const plumber = require('gulp-plumber');
 
 var inject = require('gulp-inject');
+var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('styles', gulp.series(makeCss, injectCss));
 
 function makeCss(cb) {
     let files = [
         conf.path.src('**/*.css'),
-        conf.path.styles('**/*.css')
+        conf.path.styles('**/*.css'),
+        conf.path.src('**/*.scss'),
+        conf.path.styles('**/*.scss')
     ];
 
-    // TODO sass
     return gulp.src(files, {base: '.'})
         .pipe(plumber()) // exit gracefully if something fails after this
+        .pipe(sourcemaps.init())
+        .pipe(sass().on('error', sass.logError))
+        .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest(conf.path.tmp()))
         .pipe(browserSync.stream())
         .on('finish', cb);
@@ -30,7 +36,7 @@ function injectCss(cb) {
         fs.copySync(srcIndex, dstIndex);
     }
 
-    var cssSources = gulp.src('src/styles/*.css', {read: false});
+    var cssSources = gulp.src('./src/styles/*.css', {read: false});
 
     //using gulp-inject to wire up css in index.html
     return gulp.src(dstIndex, {base: conf.path.tmp()})

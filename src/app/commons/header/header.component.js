@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
     angular.module('app')
         .component('headerComponent', {
@@ -12,9 +12,9 @@
         const vm = this;
         vm.langSelected = 'en';
 
-        vm.changeLanguage = function(langKey){
-          $translate.use(langKey);
-          vm.langSelected = langKey;
-        }
+        vm.changeLanguage = function (langKey) {
+            $translate.use(langKey);
+            vm.langSelected = langKey;
+        };
     }
 })();

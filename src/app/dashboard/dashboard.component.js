@@ -1,12 +1,13 @@
-(function() {
+(function () {
     'use strict';
 
-    angular.module('app')
+    angular.module('dashboardModule')
         .component('dashboardComponent', {
             templateUrl: 'src/app/dashboard/dashboard.html',
             controller: DashboardController,
             controllerAs: 'dashCtrl'
         });
+
     /* @ngInject */
     function DashboardController(ComputersAPI) {
         // jshint validthis: true
@@ -14,8 +15,8 @@
         vm.computersList = {};
         vm.$onInit = $onInit;
         vm.events = {
-          onPageChange: onPageChange,
-          onPageSizeChange: onPageSizeChange
+            onPageChange: onPageChange,
+            onPageSizeChange: onPageSizeChange
         };
 
         function $onInit() {
@@ -26,9 +27,9 @@
         }
 
         function getComputers() {
-          ComputersAPI.getPage(vm.page, vm.size).then(function(response) {
-              vm.computersList = response.data;
-          });
+            ComputersAPI.getPage(vm.page, vm.size).then(function (response) {
+                vm.computersList = response.data;
+            });
         }
 
         function onPageChange(page) {

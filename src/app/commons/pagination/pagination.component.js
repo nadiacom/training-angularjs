@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular.module('app')
@@ -12,22 +12,22 @@
             }
         });
     /* @ngInject */
-    function PaginationController($log) {
+    function PaginationController() {
         // jshint validthis: true
         const vm = this;
         vm.pageSizeChoices = [100, 50, 10];
         vm.$onInit = $onInit;
 
         function $onInit() {
-          //init view's values
+            //init view's values
             vm.currentPage = 1;
             vm.pageSize = 10;
             //Calculate data
             vm.getPagination();
             vm.showPagination();
-          };
+        }
 
-          vm.getPagination = function(){
+        vm.getPagination = function () {
             var NB_PAGINATION = 10;
             vm.totalPagination = 1;
             if (vm.totalNbComputer > vm.pageSize) {
@@ -43,33 +43,33 @@
                 }
                 vm.pgEnd = vm.totalPagination + 1;
             }
-          };
-          vm.showPagination = function () {
+        };
+        vm.showPagination = function () {
             vm.visiblePages = [];
-            for (var i = vm.pgStart; i< vm.pgEnd; i++){
-              vm.visiblePages.push(i);
+            for (var i = vm.pgStart; i < vm.pgEnd; i++) {
+                vm.visiblePages.push(i);
             }
             vm.isLastPage = (vm.currentPage === vm.totalPagination);
-          };
+        };
 
-          //DASHBOARD CALLBACKS
-          //On click pagination index
-          vm.selectPage = function(index) {
-              //Reload pagination
-              vm.currentPage = index;
-              vm.getPagination();
-              vm.showPagination();
-              //Dashboard callback
-              vm.events.onPageChange(vm.currentPage);
-          };
-          //On click page size choice index
-          vm.selectPageSize = function(size) {
-              vm.pageSize = size;
-              //Reload pagination
-              vm.currentPage = 1;
-              vm.getPagination();
-              vm.showPagination();
-              vm.events.onPageSizeChange(vm.pageSize);
-          };
+        //DASHBOARD CALLBACKS
+        //On click pagination index
+        vm.selectPage = function (index) {
+            //Reload pagination
+            vm.currentPage = index;
+            vm.getPagination();
+            vm.showPagination();
+            //Dashboard callback
+            vm.events.onPageChange(vm.currentPage);
+        };
+        //On click page size choice index
+        vm.selectPageSize = function (size) {
+            vm.pageSize = size;
+            //Reload pagination
+            vm.currentPage = 1;
+            vm.getPagination();
+            vm.showPagination();
+            vm.events.onPageSizeChange(vm.pageSize);
+        };
     }
 })();
