@@ -1,14 +1,25 @@
 {
-    "title": "Computer-database",
+    "title": "Application - Computer-database",
     "btn.next": "Suivant",
     "btn.back": "Précedent",
     "btn.search": "Rechercher",
     "btn.cancel": "Annuler",
     "btn.save": "Sauvegardder",
+    "btn.filter": "Filtrer par nom",
+    "btn.add": "Ajouter un ordinateur",
+    "btn.edit": "Editer",
+    "btn.change-lang-en": "English",
+    "btn.change-lang-fr": "Français",
     "lbl.loading": "chargement",
-    "lbl.search": "rechercher",
+    "lbl.search": "Rechercher par nom",
     "lbl.save": "sauvegarder",
+    "table.computer-name": "Nom de l'ordinateur",
+    "table.computer-introduced": "Date d'introduction",
+    "table.computer-discontinued": "Date de retrait du marché",
+    "table.computer-company": "Marque",
     "err.field-required": "ce champ est requis",
     "err.field-date-required": "une date est requise",
-    "err.field-number-required": "un nombre est requis"
+    "err.field-number-required": "un nombre est requis",
+    "err.404": "Erreur 404: Page non trouvée.",
+    "inf.computers-found": "ordinateurs trouvés"
 }

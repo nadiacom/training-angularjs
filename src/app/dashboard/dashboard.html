@@ -4,19 +4,19 @@
   <section id="main">
     <div class="container">
       <h1 id="homeTitle">
-               121 Computers found {{ dashCtrl.greeting }}
+               121 {{ 'inf.computers-found' | translate }}
            </h1>
       <div id="actions" class="form-horizontal">
         <div class="pull-left">
           <form id="searchForm" action="#" method="GET" class="form-inline">
 
-            <input type="search" id="searchbox" name="search" class="form-control" placeholder="Search name" />
-            <input type="submit" id="searchsubmit" value="Filter by name" class="btn btn-primary" />
+            <input type="search" id="searchbox" name="search" class="form-control" placeholder="{{ 'lbl.search' | translate }}" />
+            <input type="submit" id="searchsubmit" value="{{ 'btn.filter' | translate }}" class="btn btn-primary" />
           </form>
         </div>
         <div class="pull-right">
-          <a class="btn btn-success" id="addComputer" href="/add">Add Computer</a>
-          <a class="btn btn-default" id="editComputer" href="#" onclick="$.fn.toggleEditMode();">Edit</a>
+          <a class="btn btn-success" id="addComputer" href="/add">{{ 'btn.add' | translate }}</a>
+          <a class="btn btn-default" id="editComputer" href="#" onclick="$.fn.toggleEditMode();">{{ 'btn.edit' | translate }}</a>
         </div>
       </div>
     </div>
@@ -41,18 +41,18 @@
                            </span>
             </th>
             <th>
-              Computer name
+              {{ 'table.computer-name' | translate }}
             </th>
             <th>
-              Introduced date
+              {{ 'table.computer-introduced' | translate }}
             </th>
             <!-- Table header for Discontinued Date -->
             <th>
-              Discontinued date
+              {{ 'table.computer-discontinued' | translate }}
             </th>
             <!-- Table header for Company -->
             <th>
-              Company
+              {{ 'table.computer-company' | translate }}
             </th>
           </tr>
         </thead>

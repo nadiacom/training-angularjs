@@ -14,8 +14,8 @@
         vm.computersList = {};
         vm.$onInit = $onInit;
         vm.events = {
-          onPageChange = onPageChange,
-          onPageSizeChange = onPageSizeChange
+          onPageChange: onPageChange,
+          onPageSizeChange: onPageSizeChange
         };
 
         function $onInit() {
@@ -23,7 +23,7 @@
             vm.page = 1;
             vm.size = 10;
             getComputers();
-        };
+        }
 
         function getComputers() {
           ComputersAPI.getPage(vm.page, vm.size).then(function(response) {
@@ -34,7 +34,7 @@
         function onPageChange(page) {
             vm.page = page;
             getComputers();
-        };
+        }
 
         function onPageSizeChange(size) {
             vm.size = size;

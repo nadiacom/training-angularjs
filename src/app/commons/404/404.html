@@ -1,17 +1,13 @@
 <body>
-<header class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="dashboard.html"> Application - Computer Database </a>
-    </div>
-</header>
+  <header-component/></header-component>
 
-<section id="main">
+  <section id="main">
     <div class="container">
-        <div class="alert alert-danger">
-            Error 404: Page not found.
-            <br/>
-            <!-- stacktrace -->
-        </div>
+      <div class="alert alert-danger">
+        {{ 'err.404' | translate }}
+        <br/>
+        <!-- stacktrace -->
+      </div>
     </div>
-</section>
+  </section>
 </body>
