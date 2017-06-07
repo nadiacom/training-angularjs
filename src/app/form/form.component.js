@@ -15,6 +15,10 @@
         vm.id = $stateParams.id;
         vm.computer = {};
         vm.companies = {};
+        vm.events = {
+            add: add,
+            edit: edit
+        };
 
         function $onInit() {
             $log.debug('FormController init');
@@ -28,8 +32,12 @@
             });
         }
 
-        function add(computer){
-            ComputersAPI.add();
+        function add(){
+            ComputersAPI.add(angular.toJson(vm.computer));
+        }
+
+        function edit(){
+            ComputersAPI.edit(angular.toJson(vm.computer));
         }
     }
 })();

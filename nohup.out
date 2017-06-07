@@ -36,3 +36,22 @@ file://a.html [1:2] Ignoring the whole rule.
 /tmp/csi-cba62a9a-8f31-4bfc-869e-07569f525ace/src/main/java/com/ebiz/cdb/api/CompanyRestController.java:53:94: unexpected token: int
 /tmp/csi-cba62a9a-8f31-4bfc-869e-07569f525ace/src/main/java/com/ebiz/cdb/api/CompanyRestController.java:53:138: unexpected token: int
 /tmp/csi-73655458-84bb-44cf-89e7-19591100c009/src/main/java/com/ebiz/cdb/api/CompanyRestController.java:39:12: unexpected token: List
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/home/ebiz/.IntelliJIdea2017.1/config/plugins/CheckStyle-IDEA/lib/slf4j-log4j12-1.7.22.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/ebiz/Logiciels/idea-IU-171.4249.39/lib/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+log4j:WARN No appenders could be found for logger (org.infernus.idea.checkstyle.CheckStylePlugin).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+WARN: Can't load LiveEdit: since build 171.4424 does not match IU-171.4249.39
+WARN: Can't load AngularJS: since build 171.4424 does not match IU-171.4249.39
+WARN: Can't load PHP: since build 171.4424 does not match IU-171.4249.39
+WARN: Can't load NodeJS: since build 171.4424 does not match IU-171.4249.39
+/tmp/csi-e52fcc77-5f92-4d31-aa22-f3bdc188a851/src/main/java/com/ebiz/cdb/api/ComputerRestController.java:126:9: unexpected token: computerService
+/tmp/csi-e52fcc77-5f92-4d31-aa22-f3bdc188a851/src/main/java/com/ebiz/cdb/api/ComputerRestController.java:139:12: unexpected token: ResponseEntity
+/tmp/csi-e52fcc77-5f92-4d31-aa22-f3bdc188a851/src/main/java/com/ebiz/cdb/api/ComputerRestController.java:139:61: unexpected token: ComputerDTO
+/tmp/csi-1602e25b-2384-41f4-8780-dd519e8ef685/src/main/java/com/ebiz/cdb/api/ComputerRestController.java:126:9: unexpected token: computerService
+/tmp/csi-44fb6af4-39ea-4c39-94f6-d1a76023856c/src/main/java/com/ebiz/cdb/api/ComputerRestController.java:124:30: unexpected token: "application/json"
+/tmp/csi-44fb6af4-39ea-4c39-94f6-d1a76023856c/src/main/java/com/ebiz/cdb/api/ComputerRestController.java:125:12: unexpected token: Computer
+/tmp/csi-44fb6af4-39ea-4c39-94f6-d1a76023856c/src/main/java/com/ebiz/cdb/api/ComputerRestController.java:125:41: unexpected token: ComputerDTO

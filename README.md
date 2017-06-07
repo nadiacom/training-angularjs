@@ -207,7 +207,7 @@ Create a new component to display the pagination element.
 Have you seen the introduced date & discontinued date on dashboard ? It is displayed as a string, which will cause some troubles if you want to localise your application.
 Javascript `Date` object has some useful localisation capabilities, and it could be interesting to take advantage of it, but we don't want to convert Date from / to string each time we need it in the application.
 When applications get more complex, you may be limited if all your front-end layers work with the back-end formatted DTO, especially if you want to attach some behavior to objects.
-Write a `computer.model.js` that defines a class Computer. This class should be mapped from / to back-end computer dto.
+Write a `computer.dto.js` that defines a class Computer. This class should be mapped from / to back-end computer dto.
 Use it to display localized dates on dashboard.
 
 - Where is handled the mapping ?

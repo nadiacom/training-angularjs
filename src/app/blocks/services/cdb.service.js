@@ -17,14 +17,14 @@
             count: (callback) => {
                 return $http.get(env.api.URL + '/computers/' + id).then(callback);
             },
-            add: (callback) => {
-                return $http.post(env.api.URL + '/computers').then(callback);
+            add: (computer, callback) => {
+                return $http.post(env.api.URL + '/computers', computer).then(callback);
             },
-            edit: (id, callback) => {
-                return $http.put(env.api.URL + '/computers/' + id).then(callback);
+            edit: (computer, callback) => {
+                return $http.put(env.api.URL + '/computers/', computer).then(callback);
             },
-            delete: (callback) => {
-                return $http.delete(env.api.URL + '/computers/' + id).then(callback);
+            delete: (id, callback) => {
+                return $http.delete(env.api.URL + '/computers/', id).then(callback);
             }
         };
         /* @ngInject */
